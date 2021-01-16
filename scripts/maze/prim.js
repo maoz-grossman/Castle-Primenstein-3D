@@ -31,7 +31,7 @@ class Prim{
         var numOfVerticies = this._graph.adjacent.length;
         //create an array of bool 
         //describes which vertex is part of the maze
-        this._ofTheMaze = this.fillArrayWith(numOfVerticies,false);
+        this._ofTheMaze = fillArrayWith(numOfVerticies,false);
         //2. Pick a cell, mark it as part of the maze. 
          //      Add the walls of the cell to the wall list.
         var listOfNeighbors = this._graph.adjacent[0];
@@ -156,12 +156,5 @@ class Prim{
         return false;
     }
 
-    static fillArrayWith(size, value){
-        var array= []
-        for(var i = 0; i!= size; ++i){
-            array.push(value);
-        }
-        return array;
-    }
 }
 
