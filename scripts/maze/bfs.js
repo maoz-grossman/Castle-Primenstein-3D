@@ -1,6 +1,9 @@
 class BFS{
-    constructor(graph , source){
-        var n = graph.length* graph[0].length;        // number of nodes
+    constructor(graph , source,graphSize){
+        //TODO: adds function that take an array(graph)
+        // and returns the number pf nodes in the graph.
+        //TODO: function that find the neighbors of a node in specific graph
+        var n = graphSize;        // number of nodes
         this._nodeColor = fillArrayWith(n , "WHITE"); // colors of nodes
         this.parents = fillArrayWith(n , null);       // parent of nodes
         this._distances = fillArrayWith(n , -1);      // distance from source node
