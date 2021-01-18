@@ -6,11 +6,7 @@ class Vertex{
         this.j=j;
         this.pre=null;
     }
-    set_pre(pre){
-        this.pre= pre;
-    }
 }
-
 
 
 class Graph{

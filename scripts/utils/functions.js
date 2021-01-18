@@ -1,13 +1,20 @@
+
+//--------------------
+//
+//     functions
+//
+//--------------------
 function fillArrayWith(size, value){
     var array= []
     for(var i = 0; i!= size; ++i){
         array.push(value);
     }
+    //console.log(array);
     return array;
 }
 
 function numeralArryGraph(graphArray){
-    list= [];
+    var list= [];
     count = 0;
     for (var i = 0 ; i!= graphArray.length; ++i ){
         list[i] = [];
@@ -25,4 +32,21 @@ function numeralArryGraph(graphArray){
     // list = the actual graph;
     return [list,count];
 }
+
+function copyMatrix(matrix){
+    cpyMat = [];
+    for(var i = 0; i!= matrix.length; ++i){
+        cpyMat[i]=[];
+        for(var j = 0; j!= matrix[0].length; ++j){
+            cpyMat[i][j]= matrix[i][j];
+        }
+    }
+    return cpyMat;
+}
+
+
+
+
+
+
 
