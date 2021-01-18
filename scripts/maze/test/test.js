@@ -194,7 +194,6 @@ class BFS{
         this._nodeColor[source.name] = "GRAY";             // first visit= grey, second= black;
         this._distances[source.name] = 0;  
         this._q.enqueue(source);
-        console.log("going to initiate");
         this.initiate();
     }
 
@@ -218,7 +217,6 @@ class BFS{
 
 
     getPath(){
-        console.log("get path");
         maze = copyMatrix(this._graph);
         //need to fix copyMatrix
         var par = this.parents[this.parents.length -1];
@@ -227,7 +225,6 @@ class BFS{
             par = this.parents[par.name];
             maze[par.i][par.j] = -2 ;
         }
-        console.log("next step");
         for(var i = 0; i!= maze.length; ++i){
             for(var j = 0; j!= maze[0].length; ++j){
                 if(maze[i][j] == -2) maze[i][j] = 2;
@@ -476,9 +473,6 @@ var numeralMaze = numeralArryGraph(maze);
 var mazeSize = numeralMaze[1];
 var mazeGraph = numeralMaze[0];
 var sourcVertex = mazeGraph[1][1];
-console.log("size= "+mazeSize);
-console.log("source = " + sourcVertex.name);
-//console.log(mazeGraph);
 var bfs = new BFS(mazeGraph,sourcVertex,mazeSize);
 maze = bfs.getPath();
 var s = '';
