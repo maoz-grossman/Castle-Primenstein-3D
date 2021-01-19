@@ -4,8 +4,8 @@
 //         Main
 //
 //-----------------------
-var height = 15;
-var width = 15;
+var height = MAP_NUM_ROWS-2;
+var width = MAP_NUM_COLS-2;
 index = 0;
 var graph =  [];
 for(var i = 0; i!=height; ++i){
@@ -39,3 +39,24 @@ for (var i = 0 ; i!= maze.length; ++i ){
     s+='\n';
 }
 console.log(s);
+maze[height][width]=3;
+var grid = new Map(maze);
+var player = new Player();
+
+
+
+
+
+function setup() {
+    createCanvas(WINDOW_WIDTH, WINDOW_HEIGHT);
+}
+function update() {
+    player.update();
+}
+
+function draw() {
+    update();
+
+    grid.render();
+    player.render();
+}
