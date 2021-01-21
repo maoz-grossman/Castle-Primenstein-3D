@@ -9,6 +9,7 @@ class Player {
         this.moveSpeed = 2.0;
         this.rotationSpeed = 2 * (Math.PI / 180);
     }
+
     update() {
         this.rotationAngle += this.turnDirection * this.rotationSpeed;
 
@@ -25,13 +26,23 @@ class Player {
     render() {
         noStroke();
         fill("red");
-        circle(this.x, this.y, this.radius);
-        stroke("red");
+        circle(
+            MINI_MAP_SCALE*this.x, 
+            MINI_MAP_SCALE*this.y, 
+            MINI_MAP_SCALE*this.radius);
+            
+        //            (end.x,end.y)   
+        //       hyp /|
+        //          / | opp        => end.x = x + adj       
+        //         /__|            => end.y = y + oop
+        //    (x,y) adj            α = rotationAngle , player position=(x,y)
+        //                         oop = sin(α)*hyp, adj = cos(α)*hyp  
+        stroke("yellow");
         line(
-            this.x,
-            this.y,
-            this.x + Math.cos(this.rotationAngle) * 30,
-            this.y + Math.sin(this.rotationAngle) * 30
+            MINI_MAP_SCALE*this.x,                                              //starting point x
+            MINI_MAP_SCALE*this.y,                                              //starting point y
+            MINI_MAP_SCALE*this.x + Math.cos(this.rotationAngle) * HYPOTENUSE,  //ending point x
+            MINI_MAP_SCALE*this.y + Math.sin(this.rotationAngle) * HYPOTENUSE   //ending point y
         );
     }
 }

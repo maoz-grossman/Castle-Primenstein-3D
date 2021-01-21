@@ -26,7 +26,11 @@ class Map{
                 stroke("#222");
                 fill(tileColor);
                 //   startX  startY  height    width
-                rect(tileX, tileY, TILE_SIZE, TILE_SIZE);
+                rect(
+                    MINI_MAP_SCALE*tileX, 
+                    MINI_MAP_SCALE*tileY,
+                    MINI_MAP_SCALE*TILE_SIZE, 
+                    MINI_MAP_SCALE*TILE_SIZE);
             }
         }
     }

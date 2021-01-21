@@ -4,6 +4,11 @@
 //         Main
 //
 //-----------------------
+
+
+//--------------------
+//   maze generator
+//--------------------
 var height = MAP_NUM_ROWS-2;
 var width = MAP_NUM_COLS-2;
 index = 0;
@@ -40,23 +45,33 @@ for (var i = 0 ; i!= maze.length; ++i ){
 }
 console.log(s);
 maze[height][width]=3;
+
+
+//------------------
+//   ray casting
+//------------------
 var grid = new Map(maze);
 var player = new Player();
-
-
-
-
+var rays = [] // list of rays to be casted
 
 function setup() {
     createCanvas(WINDOW_WIDTH, WINDOW_HEIGHT);
 }
 function update() {
     player.update();
+    castAllRays();
 }
 
 function draw() {
+    clear("#111");
     update();
-
+    render3DProjectedWalls();
     grid.render();
+    let index = 0;
+    for(ray of rays){
+        if (index % 4 == 0)
+            ray.render();
+        index++;
+    }
     player.render();
 }
