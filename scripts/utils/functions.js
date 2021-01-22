@@ -69,6 +69,18 @@ function keyReleased() {
     }
 }
 
+function mousePressed(){
+    for(butt of BUTTONS){
+        butt.pressedFunction();
+    }
+}
+
+function mouseReleased(){
+    for(butt of BUTTONS){
+        butt.releasedFunction();
+    }
+}
+
 function castAllRays(){
     var rayAngle = player.rotationAngle - (FOV_ANGLE/2);
     rays = []; 

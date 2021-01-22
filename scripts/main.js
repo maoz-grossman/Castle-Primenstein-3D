@@ -45,6 +45,8 @@ for (var i = 0 ; i!= maze.length; ++i ){
 }
 console.log(s);
 maze[height][width]=3;
+var string = getDeviceType();
+console.log(string);
 
 
 //------------------
@@ -53,6 +55,8 @@ maze[height][width]=3;
 var grid = new Map(maze);
 var player = new Player();
 var rays = [] // list of rays to be casted
+//butty = new CustomButton("up");
+
 
 function setup() {
     createCanvas(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -74,4 +78,7 @@ function draw() {
         index++;
     }
     player.render();
+    for(butt of BUTTONS){
+        butt.render();
+    }
 }
