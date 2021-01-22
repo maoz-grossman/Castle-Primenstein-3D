@@ -9,6 +9,7 @@ const WALL_STRIP_WIDTH = 1;                         //the width of a ray cast
 const NUM_RAYS = WINDOW_WIDTH/WALL_STRIP_WIDTH;    //as many as can be seen throug the screen
 const HYPOTENUSE = 30;
 const MINI_MAP_SCALE = 0.25;
+const RADIUS_SIZE = 24;
 
 
 const BUTTONS = [
