@@ -78,6 +78,7 @@ function draw() {
         index++;
     }
     player.render();
+    if(string!='desktop')
     for(butt of BUTTONS){
         butt.render();
     }
