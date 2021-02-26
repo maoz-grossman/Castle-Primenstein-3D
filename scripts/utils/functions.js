@@ -126,6 +126,13 @@ function render3DProjectedWalls() {
         
         var color = ray.wasHitVertical ? 255 : 180;
 
+        var wallTopPixel = (WINDOW_HEIGHT / 2) - (wallStripHeight / 2);
+        wallTopPixel = wallTopPixel < 0 ? 0 : wallTopPixel;
+
+        var wallBottomPixel = (WINDOW_HEIGHT / 2) + (wallStripHeight / 2);
+        wallBottomPixel = wallBottomPixel > WINDOW_HEIGHT ? WINDOW_HEIGHT : wallBottomPixel;
+
+
         // render a rectangle with the calculated wall height
         fill("rgba(" + color + "," + color + "," + color + "," + alpha + ")");
         noStroke();
@@ -135,6 +142,15 @@ function render3DProjectedWalls() {
            WALL_STRIP_WIDTH,
            wallStripHeight
         );
+
+        /*
+        image(
+            img,           // image png
+            i * WALL_STRIP_WIDTH,
+            (WINDOW_HEIGHT / 2) - (wallStripHeight / 2),
+            WALL_STRIP_WIDTH,
+            wallStripHeight,           // Where it starts to draw y
+        );*/
     }
 }
 

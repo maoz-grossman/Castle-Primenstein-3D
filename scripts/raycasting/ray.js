@@ -11,6 +11,8 @@ class Ray{
 
         this.isRayFacingRight = this.rayAngle < 0.5 * Math.PI || this.rayAngle > 1.5 * Math.PI;
         this.isRayFacingLeft = !this.isRayFacingRight;
+
+        this.pixelTexture = 0;
     }
 
     cast(){
@@ -110,11 +112,15 @@ class Ray{
             this.wallHitY = vertWallHitY;
             this.distance = vertHitDistance;
             this.wasHitVertical = true;
+            var box_point = parseInt(this.wallHitX/TILE_SIZE);
+            this.pixelTexture = this.wallHitX - (box_point * TILE_SIZE);
         } else {
             this.wallHitX = horzWallHitX;
             this.wallHitY = horzWallHitY;
             this.distance = horzHitDistance;
             this.wasHitVertical = false;
+            var box_point = parseInt(this.wallHitY/TILE_SIZE);
+            this.pixelTexture = this.wallHitY - (box_point * TILE_SIZE);
         }
         
     }

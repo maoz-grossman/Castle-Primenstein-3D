@@ -55,7 +55,9 @@ console.log(string);
 var grid = new Map(maze);
 var player = new Player();
 var rays = [] // list of rays to be casted
-//butty = new CustomButton("up");
+
+// Tiles texture
+//tilesTexture = new Image();
 
 
 function setup() {
